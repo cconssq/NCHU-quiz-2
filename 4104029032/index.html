@@ -1,0 +1,53 @@
+﻿<html>
+<head>
+<meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=big5">
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.4.min.js"></script>
+<style type="text/css">
+ .large { font-size: 20pt; } 
+ .red { color: red; } 
+ </style>
+<script language="JavaScript"> 
+$(document).ready(function(){
+$('#change').mouseenter(function(){
+$('#list').addClass("red");   
+$('#list').addClass('large');}) 
+.mouseleave(function(){
+ $('#list').removeClass("red"); 
+$('#list').removeClass('large');});
+ });  
+</script>
+</head>
+
+<body>
+<h2 id="title">Web Programing</h2>
+<hr>
+<p id="default">Content</p>
+<div id="out">
+<ul id="list">
+ <li id="t1">HTML</li>
+ <li id="t2">CSS</li>
+ <li id="t3">DOM</li>
+ <li id="t4">JavaScript</li>
+ <li id="t5">JSP</li>
+</ul>
+    <input type="button" value="以JS修改元素內容" onclick="changeData()"/><input type="button" id="change" value="以jQuery更改CSS"/><input type="button" value="修改標題" onclick="changeTitle()"/>
+</div>
+<script language="JavaScript">
+function changeData(){
+    var data1 = document.getElementById("t1");
+	var data2 = document.getElementById("t2");	
+    data1.innerHTML = "HTML5";
+    data2.innerHTML = "CSS3";
+	var li = document.createElement('li');
+    var text = document.createTextNode('MySQL');
+    li.appendChild(text);
+    document.getElementById("list").appendChild(li);	
+}
+function changeTitle(){
+    var data1 = document.getElementById("title");
+    data1.innerHTML = "Web Programing_4104029032";
+}
+</script>
+<hr>
+</body>
+</html>
